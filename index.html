@@ -64,7 +64,7 @@
       font-weight: bold;
     }
 
-    .gallery-container {
+    .gallery-scroll {
       display: flex;
       overflow-x: auto;
       gap: 20px;
@@ -72,15 +72,15 @@
       scroll-behavior: smooth;
     }
 
-    .gallery-container img {
+    .gallery-scroll img {
       height: 200px;
-      flex: 0 0 auto;
       border-radius: 10px;
+      flex: 0 0 auto;
       box-shadow: 0 0 10px rgba(255,255,255,0.3);
       transition: transform 0.3s ease;
     }
 
-    .gallery-container img:hover {
+    .gallery-scroll img:hover {
       transform: scale(1.05);
     }
 
@@ -137,7 +137,9 @@
 
 <section>
   <h2>📸 Etkinlik Galerisi</h2>
-  <div class="gallery-container">
+  <div class="gallery-scroll">
+    <!-- 1.jpeg ~ 20.jpeg -->
+    <!-- Galeri klasöründeki resimler -->
     <img src="gallery/1.jpeg" alt="1">
     <img src="gallery/2.jpeg" alt="2">
     <img src="gallery/3.jpeg" alt="3">
@@ -166,14 +168,14 @@
 </footer>
 
 <script>
-  const emojis = ["🐻", "🦄", "🍭", "🎈", "🎉", "🍬"];
-  for (let i = 0; i < 30; i++) {
+  const emojis = ["🎈", "🧁", "🍭", "🎉", "🦄", "🐻"];
+  for (let i = 0; i < 40; i++) {
     const span = document.createElement("span");
     span.className = "emoji";
     span.innerText = emojis[Math.floor(Math.random() * emojis.length)];
     span.style.left = Math.random() * 100 + "vw";
-    span.style.animationDuration = (Math.random() * 10 + 10) + "s";
-    span.style.fontSize = (Math.random() * 20 + 20) + "px";
+    span.style.animationDuration = (Math.random() * 8 + 5) + "s";
+    span.style.fontSize = (Math.random() * 25 + 15) + "px";
     document.body.appendChild(span);
   }
 </script>
