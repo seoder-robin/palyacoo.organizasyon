@@ -12,7 +12,6 @@
       background: radial-gradient(circle at top, #1a237e, #4a148c);
       color: white;
       overflow-x: hidden;
-      position: relative;
     }
     header {
       background: linear-gradient(45deg, #ff4081, #ffca28);
@@ -21,19 +20,15 @@
       font-size: 2.5em;
       color: #fff;
       text-shadow: 2px 2px 4px #000;
-      position: relative;
-      z-index: 10;
     }
     section {
       padding: 30px 20px;
-      max-width: 900px;
+      max-width: 1200px;
       margin: 40px auto;
       background: rgba(255, 255, 255, 0.1);
       border-radius: 20px;
       backdrop-filter: blur(8px);
       box-shadow: 0 0 15px rgba(255,255,255,0.2);
-      position: relative;
-      z-index: 10;
     }
     h2 {
       color: #ffe082;
@@ -55,52 +50,30 @@
       color: #1a237e;
       text-decoration: none;
       border-radius: 30px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.3);
       font-weight: bold;
     }
+    .gallery-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 10px 0;
+      scroll-behavior: smooth;
+    }
+    .gallery-container img {
+      border-radius: 12px;
+      height: 200px;
+      flex: 0 0 auto;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery-container img:hover {
+      transform: scale(1.05);
+    }
     footer {
-      margin: 50px 0 20px;
       text-align: center;
+      margin: 50px 0 20px;
       color: #ccc;
       font-size: 14px;
-      z-index: 10;
-      position: relative;
-    }
-
-    .emoji {
-      position: fixed;
-      font-size: 24px;
-      animation: floatEmoji linear infinite;
-      z-index: 1;
-    }
-
-    @keyframes floatEmoji {
-      0% {
-        transform: translateY(100vh) rotate(0deg);
-        opacity: 0.8;
-      }
-      100% {
-        transform: translateY(-10vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
-
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-    }
-
-    .gallery img {
-      width: 250px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
     }
   </style>
 </head>
@@ -128,28 +101,20 @@
 </section>
 
 <section>
-  <h2>📷 Etkinlik Galerisi</h2>
-  <div class="gallery">
-    <img src="gallery/1.jpeg" alt="Etkinlik 1">
-    <img src="gallery/2.jpeg" alt="Etkinlik 2">
-    <img src="gallery/3.jpeg" alt="Etkinlik 3">
-    <img src="gallery/4.jpeg" alt="Etkinlik 4">
-    <img src="gallery/5.jpeg" alt="Etkinlik 5">
-    <img src="gallery/6.jpeg" alt="Etkinlik 6">
-    <img src="gallery/7.jpeg" alt="Etkinlik 7">
-    <img src="gallery/8.jpeg" alt="Etkinlik 8">
-    <img src="gallery/9.jpeg" alt="Etkinlik 9">
-    <img src="gallery/10.jpeg" alt="Etkinlik 10">
-    <img src="gallery/11.jpeg" alt="Etkinlik 11">
-    <img src="gallery/12.jpeg" alt="Etkinlik 12">
-    <img src="gallery/13.jpeg" alt="Etkinlik 13">
-    <img src="gallery/14.jpeg" alt="Etkinlik 14">
-    <img src="gallery/15.jpeg" alt="Etkinlik 15">
-    <img src="gallery/16.jpeg" alt="Etkinlik 16">
-    <img src="gallery/17.jpeg" alt="Etkinlik 17">
-    <img src="gallery/18.jpeg" alt="Etkinlik 18">
-    <img src="gallery/19.jpeg" alt="Etkinlik 19">
-    <img src="gallery/20.jpeg" alt="Etkinlik 20">
+  <h2>📸 Etkinlik Galerisi</h2>
+  <div class="gallery-container">
+    <!-- Görseller buraya -->
+    <img src="gallery/1.jpeg" alt="Etkinlik 1" onclick="openImage(this.src)">
+    <img src="gallery/2.jpeg" alt="Etkinlik 2" onclick="openImage(this.src)">
+    <img src="gallery/3.jpeg" alt="Etkinlik 3" onclick="openImage(this.src)">
+    <img src="gallery/4.jpeg" alt="Etkinlik 4" onclick="openImage(this.src)">
+    <img src="gallery/5.jpeg" alt="Etkinlik 5" onclick="openImage(this.src)">
+    <img src="gallery/6.jpeg" alt="Etkinlik 6" onclick="openImage(this.src)">
+    <img src="gallery/7.jpeg" alt="Etkinlik 7" onclick="openImage(this.src)">
+    <img src="gallery/8.jpeg" alt="Etkinlik 8" onclick="openImage(this.src)">
+    <img src="gallery/9.jpeg" alt="Etkinlik 9" onclick="openImage(this.src)">
+    <img src="gallery/10.jpeg" alt="Etkinlik 10" onclick="openImage(this.src)">
+    <!-- Devamını sen ekleyebilirsin -->
   </div>
 </section>
 
@@ -157,16 +122,11 @@
   © 2025 Minik Kalpler Organizasyon
 </footer>
 
+<!-- Resim tıklayınca büyütme -->
 <script>
-  const emojis = ["🐻", "🦄", "🍭", "🎈", "🎉"];
-  for (let i = 0; i < 40; i++) {
-    const span = document.createElement("span");
-    span.className = "emoji";
-    span.innerText = emojis[Math.floor(Math.random() * emojis.length)];
-    span.style.left = Math.random() * 100 + "vw";
-    span.style.animationDuration = (Math.random() * 10 + 10) + "s";
-    span.style.fontSize = (Math.random() * 20 + 20) + "px";
-    document.body.appendChild(span);
+  function openImage(src) {
+    const win = window.open("");
+    win.document.write("<img src='" + src + "' style='width:100%'>");
   }
 </script>
 
