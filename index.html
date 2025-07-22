@@ -14,7 +14,6 @@
       overflow-x: hidden;
       position: relative;
     }
-
     header {
       background: linear-gradient(45deg, #ff4081, #ffca28);
       padding: 30px;
@@ -22,34 +21,32 @@
       font-size: 2.5em;
       color: #fff;
       text-shadow: 2px 2px 4px #000;
+      position: relative;
+      z-index: 10;
     }
-
     section {
       padding: 30px 20px;
-      max-width: 800px;
+      max-width: 900px;
       margin: 40px auto;
       background: rgba(255, 255, 255, 0.1);
       border-radius: 20px;
       backdrop-filter: blur(8px);
       box-shadow: 0 0 15px rgba(255,255,255,0.2);
+      position: relative;
       z-index: 10;
     }
-
     h2 {
       color: #ffe082;
       text-shadow: 1px 1px 2px black;
     }
-
     ul {
       list-style: none;
       padding: 0;
       font-size: 1.3em;
     }
-
     li {
       margin: 12px 0;
     }
-
     a.button {
       display: inline-block;
       padding: 12px 25px;
@@ -61,12 +58,13 @@
       box-shadow: 0 0 10px rgba(255,255,255,0.3);
       font-weight: bold;
     }
-
     footer {
       margin: 50px 0 20px;
       text-align: center;
       color: #ccc;
       font-size: 14px;
+      z-index: 10;
+      position: relative;
     }
 
     .emoji {
@@ -87,31 +85,21 @@
       }
     }
 
-    /* Galeri stilleri */
-    .gallery-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 20px;
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
     }
 
-    .gallery-item {
-      overflow: hidden;
+    .gallery img {
+      width: 250px;
       border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s ease;
     }
 
-    .gallery-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-
-    .gallery-item:hover img {
+    .gallery img:hover {
       transform: scale(1.05);
     }
   </style>
@@ -133,24 +121,36 @@
 </section>
 
 <section>
-  <h2>📸 Etkinlik Galerisi</h2>
-  <div class="gallery-container">
-    <!-- 20 görsel -->
-    <!-- gallery klasöründeki 1.jpg - 20.jpg -->
-    <!-- hepsi optimize edildi -->
-    ${[...Array(20)].map((_, i) => `
-      <div class="gallery-item">
-        <img src="gallery/${i + 1}.jpeg" alt="Etkinlik ${i + 1}">
-      </div>
-    `).join('')}
-  </div>
-</section>
-
-<section>
   <h2>📞 İletişim</h2>
   <p>Telefon: 0545 622 08 93</p>
   <a class="button" href="https://wa.me/905456220893" target="_blank">📲 WhatsApp</a>
   <a class="button" href="https://www.instagram.com/palyacoo.organizasyon" target="_blank">📸 Instagram</a>
+</section>
+
+<section>
+  <h2>📷 Etkinlik Galerisi</h2>
+  <div class="gallery">
+    <img src="gallery/1.jpeg" alt="Etkinlik 1">
+    <img src="gallery/2.jpeg" alt="Etkinlik 2">
+    <img src="gallery/3.jpeg" alt="Etkinlik 3">
+    <img src="gallery/4.jpeg" alt="Etkinlik 4">
+    <img src="gallery/5.jpeg" alt="Etkinlik 5">
+    <img src="gallery/6.jpeg" alt="Etkinlik 6">
+    <img src="gallery/7.jpeg" alt="Etkinlik 7">
+    <img src="gallery/8.jpeg" alt="Etkinlik 8">
+    <img src="gallery/9.jpeg" alt="Etkinlik 9">
+    <img src="gallery/10.jpeg" alt="Etkinlik 10">
+    <img src="gallery/11.jpeg" alt="Etkinlik 11">
+    <img src="gallery/12.jpeg" alt="Etkinlik 12">
+    <img src="gallery/13.jpeg" alt="Etkinlik 13">
+    <img src="gallery/14.jpeg" alt="Etkinlik 14">
+    <img src="gallery/15.jpeg" alt="Etkinlik 15">
+    <img src="gallery/16.jpeg" alt="Etkinlik 16">
+    <img src="gallery/17.jpeg" alt="Etkinlik 17">
+    <img src="gallery/18.jpeg" alt="Etkinlik 18">
+    <img src="gallery/19.jpeg" alt="Etkinlik 19">
+    <img src="gallery/20.jpeg" alt="Etkinlik 20">
+  </div>
 </section>
 
 <footer>
