@@ -22,8 +22,6 @@
       font-size: 2.5em;
       color: #fff;
       text-shadow: 2px 2px 4px #000;
-      position: relative;
-      z-index: 10;
     }
 
     section {
@@ -34,7 +32,6 @@
       border-radius: 20px;
       backdrop-filter: blur(8px);
       box-shadow: 0 0 15px rgba(255,255,255,0.2);
-      position: relative;
       z-index: 10;
     }
 
@@ -70,28 +67,52 @@
       text-align: center;
       color: #ccc;
       font-size: 14px;
-      z-index: 10;
-      position: relative;
     }
 
     .emoji {
       position: fixed;
-      z-index: 1;
+      font-size: 24px;
       animation: floatEmoji linear infinite;
-      top: 100vh;
-      pointer-events: none;
-      opacity: 1;
+      z-index: 1;
     }
 
     @keyframes floatEmoji {
       0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0.8;
       }
       100% {
-        transform: translateY(-130vh) rotate(720deg);
-        opacity: 0.6;
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
       }
+    }
+
+    /* Galeri stilleri */
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
     }
   </style>
 </head>
@@ -112,6 +133,20 @@
 </section>
 
 <section>
+  <h2>📸 Etkinlik Galerisi</h2>
+  <div class="gallery-container">
+    <!-- 20 görsel -->
+    <!-- gallery klasöründeki 1.jpg - 20.jpg -->
+    <!-- hepsi optimize edildi -->
+    ${[...Array(20)].map((_, i) => `
+      <div class="gallery-item">
+        <img src="gallery/${i + 1}.jpeg" alt="Etkinlik ${i + 1}">
+      </div>
+    `).join('')}
+  </div>
+</section>
+
+<section>
   <h2>📞 İletişim</h2>
   <p>Telefon: 0545 622 08 93</p>
   <a class="button" href="https://wa.me/905456220893" target="_blank">📲 WhatsApp</a>
@@ -123,14 +158,14 @@
 </footer>
 
 <script>
-  const emojis = ["🐻", "🦄", "🍭", "🎈", "🎉", "🎠", "🍓", "🍬", "🎪", "🎂"];
-  for (let i = 0; i < 50; i++) {
+  const emojis = ["🐻", "🦄", "🍭", "🎈", "🎉"];
+  for (let i = 0; i < 40; i++) {
     const span = document.createElement("span");
     span.className = "emoji";
     span.innerText = emojis[Math.floor(Math.random() * emojis.length)];
     span.style.left = Math.random() * 100 + "vw";
-    span.style.animationDuration = (Math.random() * 12 + 8) + "s";
-    span.style.fontSize = (Math.random() * 20 + 40) + "px";
+    span.style.animationDuration = (Math.random() * 10 + 10) + "s";
+    span.style.fontSize = (Math.random() * 20 + 20) + "px";
     document.body.appendChild(span);
   }
 </script>
