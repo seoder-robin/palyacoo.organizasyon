@@ -14,6 +14,7 @@
       overflow-x: hidden;
       position: relative;
     }
+
     header {
       background: linear-gradient(45deg, #ff4081, #ffca28);
       padding: 30px;
@@ -24,6 +25,7 @@
       position: relative;
       z-index: 10;
     }
+
     section {
       padding: 30px 20px;
       max-width: 800px;
@@ -35,18 +37,22 @@
       position: relative;
       z-index: 10;
     }
+
     h2 {
       color: #ffe082;
       text-shadow: 1px 1px 2px black;
     }
+
     ul {
       list-style: none;
       padding: 0;
       font-size: 1.3em;
     }
+
     li {
       margin: 12px 0;
     }
+
     a.button {
       display: inline-block;
       padding: 12px 25px;
@@ -58,6 +64,7 @@
       box-shadow: 0 0 10px rgba(255,255,255,0.3);
       font-weight: bold;
     }
+
     footer {
       margin: 50px 0 20px;
       text-align: center;
@@ -67,23 +74,23 @@
       position: relative;
     }
 
-    /* Animasyonlu Emojiler */
     .emoji {
       position: fixed;
-      font-size: 24px;
-      animation: floatEmoji linear infinite;
       z-index: 1;
+      animation: floatEmoji linear infinite;
       top: 100vh;
+      pointer-events: none;
+      opacity: 1;
     }
 
     @keyframes floatEmoji {
       0% {
         transform: translateY(0) rotate(0deg);
-        opacity: 0.8;
+        opacity: 1;
       }
       100% {
-        transform: translateY(-110vh) rotate(360deg);
-        opacity: 0;
+        transform: translateY(-130vh) rotate(720deg);
+        opacity: 0.6;
       }
     }
   </style>
@@ -115,16 +122,15 @@
   © 2025 Minik Kalpler Organizasyon
 </footer>
 
-<!-- EMOJİLERİ UÇURAN JAVASCRIPT -->
 <script>
-  const emojis = ["🐻", "🦄", "🍭", "🎈", "🎉"];
-  for (let i = 0; i < 40; i++) {
+  const emojis = ["🐻", "🦄", "🍭", "🎈", "🎉", "🎠", "🍓", "🍬", "🎪", "🎂"];
+  for (let i = 0; i < 50; i++) {
     const span = document.createElement("span");
     span.className = "emoji";
     span.innerText = emojis[Math.floor(Math.random() * emojis.length)];
     span.style.left = Math.random() * 100 + "vw";
-    span.style.animationDuration = (Math.random() * 10 + 5) + "s";
-    span.style.fontSize = (Math.random() * 20 + 24) + "px";
+    span.style.animationDuration = (Math.random() * 12 + 8) + "s";
+    span.style.fontSize = (Math.random() * 20 + 40) + "px";
     document.body.appendChild(span);
   }
 </script>
