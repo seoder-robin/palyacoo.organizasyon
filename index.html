@@ -12,6 +12,7 @@
       background: radial-gradient(circle at top, #1a237e, #4a148c);
       color: white;
       overflow-x: hidden;
+      position: relative;
     }
     header {
       background: linear-gradient(45deg, #ff4081, #ffca28);
@@ -75,6 +76,24 @@
       color: #ccc;
       font-size: 14px;
     }
+    .emoji {
+      position: absolute;
+      font-size: 24px;
+      animation: float 10s linear infinite;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) translateX(50px);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -103,7 +122,6 @@
 <section>
   <h2>📸 Etkinlik Galerisi</h2>
   <div class="gallery-container">
-    <!-- Görseller buraya -->
     <img src="gallery/1.jpeg" alt="Etkinlik 1" onclick="openImage(this.src)">
     <img src="gallery/2.jpeg" alt="Etkinlik 2" onclick="openImage(this.src)">
     <img src="gallery/3.jpeg" alt="Etkinlik 3" onclick="openImage(this.src)">
@@ -114,7 +132,6 @@
     <img src="gallery/8.jpeg" alt="Etkinlik 8" onclick="openImage(this.src)">
     <img src="gallery/9.jpeg" alt="Etkinlik 9" onclick="openImage(this.src)">
     <img src="gallery/10.jpeg" alt="Etkinlik 10" onclick="openImage(this.src)">
-    <!-- Devamını sen ekleyebilirsin -->
   </div>
 </section>
 
@@ -122,11 +139,20 @@
   © 2025 Minik Kalpler Organizasyon
 </footer>
 
-<!-- Resim tıklayınca büyütme -->
 <script>
   function openImage(src) {
     const win = window.open("");
     win.document.write("<img src='" + src + "' style='width:100%'>");
+  }
+
+  const emojis = ['🐻', '🦄', '🍭', '🍬', '🎈', '🎉'];
+  for (let i = 0; i < 25; i++) {
+    const emoji = document.createElement('div');
+    emoji.classList.add('emoji');
+    emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+    emoji.style.left = Math.random() * 100 + 'vw';
+    emoji.style.animationDuration = (8 + Math.random() * 4) + 's';
+    document.body.appendChild(emoji);
   }
 </script>
 
