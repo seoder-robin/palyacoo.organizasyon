@@ -2,39 +2,130 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <title>Minik Kalpler Organizasyon</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body { font-family: Comic Sans MS, cursive; background: #ffecec; text-align: center; color: #333; padding: 20px; }
-        header { background: #ff69b4; padding: 20px; color: white; font-size: 24px; border-radius: 10px; }
-        section { margin: 30px 0; }
-        .box { background: white; border-radius: 10px; padding: 20px; margin: 10px auto; max-width: 600px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1); }
-        footer { margin-top: 40px; font-size: 14px; color: #888; }
-    </style>
+  <meta charset="UTF-8">
+  <title>Minik Kalpler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Fredoka One', cursive;
+      background: radial-gradient(circle at top, #1a237e, #4a148c);
+      color: white;
+      overflow-x: hidden;
+      position: relative;
+    }
+    header {
+      background: linear-gradient(45deg, #ff4081, #ffca28);
+      padding: 30px;
+      text-align: center;
+      font-size: 2.5em;
+      color: #fff;
+      text-shadow: 2px 2px 4px #000;
+      position: relative;
+      z-index: 10;
+    }
+    section {
+      padding: 30px 20px;
+      max-width: 800px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+      position: relative;
+      z-index: 10;
+    }
+    h2 {
+      color: #ffe082;
+      text-shadow: 1px 1px 2px black;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      font-size: 1.3em;
+    }
+    li {
+      margin: 12px 0;
+    }
+    a.button {
+      display: inline-block;
+      padding: 12px 25px;
+      margin: 15px 10px;
+      background: #ffca28;
+      color: #1a237e;
+      text-decoration: none;
+      border-radius: 30px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.3);
+      font-weight: bold;
+    }
+    footer {
+      margin: 50px 0 20px;
+      text-align: center;
+      color: #ccc;
+      font-size: 14px;
+      z-index: 10;
+      position: relative;
+    }
+
+    .emoji {
+      position: fixed;
+      font-size: 24px;
+      animation: floatEmoji linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes floatEmoji {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>Minik Kalpler Organizasyon</header>
 
-    <section class="box">
-        <h2>🎈 Hizmetlerimiz 🎈</h2>
-        <ul style="list-style: none; padding: 0;">
-            <li>🤡 Palyaço Kiralama</li>
-            <li>🍭 Pamuk Şeker Makinesi Kiralama</li>
-            <li>🍿 Patlamış Mısır Arabası Kiralama</li>
-            <li>🐻 Maskot Gösterileri</li>
-        </ul>
-    </section>
+<header>
+  Minik Kalpler
+</header>
 
-    <section class="box">
-        <h2>📞 İletişim</h2>
-        <p>Telefon: 0545 622 08 93</p>
-        <p><a href="https://instagram.com/" target="_blank">Instagram</a></p>
-        <p><a href="https://wa.me/905456220893" target="_blank">WhatsApp ile İletişime Geç</a></p>
-    </section>
+<section>
+  <h2>🎈 Hizmetlerimiz</h2>
+  <ul>
+    <li>🤡 Palyaço Kiralama</li>
+    <li>🍭 Pamuk Şeker Makinesi Kiralama</li>
+    <li>🍿 Patlamış Mısır Arabası Kiralama</li>
+    <li>🐻 Maskot Gösterileri</li>
+  </ul>
+</section>
 
-    <footer>
-        © 2025 Minik Kalpler Organizasyon
-    </footer>
+<section>
+  <h2>📞 İletişim</h2>
+  <p>Telefon: 0545 622 08 93</p>
+  <a class="button" href="https://wa.me/905456220893" target="_blank">📲 WhatsApp</a>
+  <a class="button" href="https://www.instagram.com/palyacoo.organizasyon" target="_blank">📸 Instagram</a>
+</section>
+
+<footer>
+  © 2025 Minik Kalpler Organizasyon
+</footer>
+
+<script>
+  const emojis = ["🐻", "🦄", "🍭", "🎈", "🎉"];
+  for (let i = 0; i < 40; i++) {
+    const span = document.createElement("span");
+    span.className = "emoji";
+    span.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+    span.style.left = Math.random() * 100 + "vw";
+    span.style.animationDuration = (Math.random() * 10 + 10) + "s";
+    span.style.fontSize = (Math.random() * 20 + 20) + "px";
+    document.body.appendChild(span);
+  }
+</script>
+
 </body>
 </html>
