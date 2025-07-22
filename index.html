@@ -28,7 +28,7 @@
 
     section {
       padding: 30px 20px;
-      max-width: 1200px;
+      max-width: 800px;
       margin: 40px auto;
       background: rgba(255, 255, 255, 0.1);
       border-radius: 20px;
@@ -61,27 +61,8 @@
       color: #1a237e;
       text-decoration: none;
       border-radius: 30px;
-      font-weight: bold;
-    }
-
-    .gallery-scroll {
-      display: flex;
-      overflow-x: auto;
-      gap: 20px;
-      padding: 20px 0;
-      scroll-behavior: smooth;
-    }
-
-    .gallery-scroll img {
-      height: 200px;
-      border-radius: 10px;
-      flex: 0 0 auto;
       box-shadow: 0 0 10px rgba(255,255,255,0.3);
-      transition: transform 0.3s ease;
-    }
-
-    .gallery-scroll img:hover {
-      transform: scale(1.05);
+      font-weight: bold;
     }
 
     footer {
@@ -94,20 +75,22 @@
     }
 
     .emoji {
-      position: absolute;
-      font-size: 24px;
-      animation: float linear infinite;
+      position: fixed;
       z-index: 1;
+      animation: floatEmoji linear infinite;
+      top: 100vh;
+      pointer-events: none;
+      opacity: 1;
     }
 
-    @keyframes float {
+    @keyframes floatEmoji {
       0% {
-        transform: translateY(100vh) rotate(0deg);
-        opacity: 0.8;
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
       }
       100% {
-        transform: translateY(-10vh) rotate(360deg);
-        opacity: 0;
+        transform: translateY(-130vh) rotate(720deg);
+        opacity: 0.6;
       }
     }
   </style>
@@ -135,47 +118,19 @@
   <a class="button" href="https://www.instagram.com/palyacoo.organizasyon" target="_blank">📸 Instagram</a>
 </section>
 
-<section>
-  <h2>📸 Etkinlik Galerisi</h2>
-  <div class="gallery-scroll">
-    <!-- 1.jpeg ~ 20.jpeg -->
-    <!-- Galeri klasöründeki resimler -->
-    <img src="gallery/1.jpeg" alt="1">
-    <img src="gallery/2.jpeg" alt="2">
-    <img src="gallery/3.jpeg" alt="3">
-    <img src="gallery/4.jpeg" alt="4">
-    <img src="gallery/5.jpeg" alt="5">
-    <img src="gallery/6.jpeg" alt="6">
-    <img src="gallery/7.jpeg" alt="7">
-    <img src="gallery/8.jpeg" alt="8">
-    <img src="gallery/9.jpeg" alt="9">
-    <img src="gallery/10.jpeg" alt="10">
-    <img src="gallery/11.jpeg" alt="11">
-    <img src="gallery/12.jpeg" alt="12">
-    <img src="gallery/13.jpeg" alt="13">
-    <img src="gallery/14.jpeg" alt="14">
-    <img src="gallery/15.jpeg" alt="15">
-    <img src="gallery/16.jpeg" alt="16">
-    <img src="gallery/17.jpeg" alt="17">
-    <img src="gallery/18.jpeg" alt="18">
-    <img src="gallery/19.jpeg" alt="19">
-    <img src="gallery/20.jpeg" alt="20">
-  </div>
-</section>
-
 <footer>
   © 2025 Minik Kalpler Organizasyon
 </footer>
 
 <script>
-  const emojis = ["🎈", "🧁", "🍭", "🎉", "🦄", "🐻"];
-  for (let i = 0; i < 40; i++) {
+  const emojis = ["🐻", "🦄", "🍭", "🎈", "🎉", "🎠", "🍓", "🍬", "🎪", "🎂"];
+  for (let i = 0; i < 50; i++) {
     const span = document.createElement("span");
     span.className = "emoji";
     span.innerText = emojis[Math.floor(Math.random() * emojis.length)];
     span.style.left = Math.random() * 100 + "vw";
-    span.style.animationDuration = (Math.random() * 8 + 5) + "s";
-    span.style.fontSize = (Math.random() * 25 + 15) + "px";
+    span.style.animationDuration = (Math.random() * 12 + 8) + "s";
+    span.style.fontSize = (Math.random() * 20 + 40) + "px";
     document.body.appendChild(span);
   }
 </script>
