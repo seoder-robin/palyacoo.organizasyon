@@ -93,6 +93,20 @@
         opacity: 0.6;
       }
     }
+
+    .gallery {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      padding: 10px 0;
+    }
+
+    .gallery img {
+      max-height: 200px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      flex-shrink: 0;
+    }
   </style>
 </head>
 <body>
@@ -112,40 +126,17 @@
 </section>
 
 <section>
+  <h2>📸 Galerimiz</h2>
+  <div class="gallery">
+    <img src="gallery/1.jpeg" alt="Etkinlik Fotoğrafı">
+  </div>
+</section>
+
+<section>
   <h2>📞 İletişim</h2>
   <p>Telefon: 0545 622 08 93</p>
   <a class="button" href="https://wa.me/905456220893" target="_blank">📲 WhatsApp</a>
   <a class="button" href="https://www.instagram.com/palyacoo.organizasyon" target="_blank">📸 Instagram</a>
-</section>
-<section>
-  <section>
-  <h2>📸 Etkinlik Galerisi</h2>
-  <div style="display: flex; overflow-x: auto; gap: 10px; padding: 10px;">
-    <img src="gallery/1.jpeg" style="height:200px; border-radius: 10px;">
-    <img src="gallery/2.jpeg" style="height:200px; border-radius: 10px;">
-    <img src="gallery/3.jpeg" style="height:200px; border-radius: 10px;">
-    <img src="gallery/4.jpeg" style="height:200px; border-radius: 10px;">
-    <img src="gallery/5.jpeg" style="height:200px; border-radius: 10px;">
-    <img src="gallery/6.jpeg" style="height:200px; border-radius: 10px;">
-    <img src="gallery/7.jpeg" style="height:200px; border-radius: 10px;">
-    <img src="gallery/8.jpeg" style="height:200px; border-radius: 10px;">
-    <img src="gallery/9.jpeg" style="height:200px; border-radius: 10px;">
-    <img src="gallery/10.jpeg" style="height:200px; border-radius: 10px;">
-    <img src="gallery/11.jpeg" style="height:200px; border-radius: 10px;">
-    <img src="gallery/12.jpeg" style="height:200px; border-radius: 10px;">
-    <img src="gallery/13.jpeg" style="height:200px; border-radius: 10px;">
-    <img src="gallery/14.jpeg" style="height:200px; border-radius: 10px;">
-    <img src="gallery/15.jpeg" style="height:200px; border-radius: 10px;">
-    <img src="gallery/16.jpeg" style="height:200px; border-radius: 10px;">
-    <img src="gallery/17.jpeg" style="height:200px; border-radius: 10px;">
-    <img src="gallery/18.jpeg" style="height:200px; border-radius: 10px;">
-    <img src="gallery/19.jpeg" style="height:200px; border-radius: 10px;">
-    <img src="gallery/20.jpeg" style="height:200px; border-radius: 10px;">
-    <img src="gallery/21.jpeg" style="height:200px; border-radius: 10px;">
-  </div>
-</section>
-
-  </div>
 </section>
 
 <footer>
