@@ -12,30 +12,30 @@
       background: radial-gradient(circle at top, #1a237e, #4a148c);
       color: white;
       overflow-x: hidden;
-      position: relative;
     }
 
     header {
       background: linear-gradient(45deg, #ff4081, #ffca28);
-      padding: 30px;
+      padding: 20px;
       text-align: center;
-      font-size: 2.5em;
       color: #fff;
       text-shadow: 2px 2px 4px #000;
-      position: relative;
-      z-index: 10;
+    }
+
+    header img {
+      max-height: 180px;
+      border-radius: 30px;
+      margin-bottom: 15px;
     }
 
     section {
       padding: 30px 20px;
-      max-width: 900px;
+      max-width: 1000px;
       margin: 40px auto;
       background: rgba(255, 255, 255, 0.1);
       border-radius: 20px;
       backdrop-filter: blur(8px);
       box-shadow: 0 0 15px rgba(255,255,255,0.2);
-      position: relative;
-      z-index: 10;
     }
 
     h2 {
@@ -65,13 +65,29 @@
       font-weight: bold;
     }
 
+    .gallery {
+      display: flex;
+      overflow-x: auto;
+      padding: 10px 0;
+      gap: 10px;
+    }
+
+    .gallery img {
+      height: 200px;
+      border-radius: 15px;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+
     footer {
       margin: 50px 0 20px;
       text-align: center;
       color: #ccc;
       font-size: 14px;
-      z-index: 10;
-      position: relative;
     }
 
     .emoji {
@@ -93,26 +109,13 @@
         opacity: 0.6;
       }
     }
-
-    .gallery {
-      display: flex;
-      overflow-x: auto;
-      gap: 10px;
-      padding: 10px 0;
-    }
-
-    .gallery img {
-      max-height: 200px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      flex-shrink: 0;
-    }
   </style>
 </head>
 <body>
 
 <header>
-  Minik Kalpler
+  <img src="gallery/1.jpeg" alt="Minik Kalpler Logo">
+  <h1>Minik Kalpler</h1>
 </header>
 
 <section>
@@ -126,29 +129,28 @@
 </section>
 
 <section>
-  <h2>📸 Galerimiz</h2>
+  <h2>📷 Etkinlik Galerisi</h2>
   <div class="gallery">
-    <!-- 20 görseli burada listeledik -->
-    <img src="gallery/1.jpeg" alt="1">
-    <img src="gallery/2.jpeg" alt="2">
-    <img src="gallery/3.jpeg" alt="3">
-    <img src="gallery/4.jpeg" alt="4">
-    <img src="gallery/5.jpeg" alt="5">
-    <img src="gallery/6.jpeg" alt="6">
-    <img src="gallery/7.jpeg" alt="7">
-    <img src="gallery/8.jpeg" alt="8">
-    <img src="gallery/9.jpeg" alt="9">
-    <img src="gallery/10.jpeg" alt="10">
-    <img src="gallery/11.jpeg" alt="11">
-    <img src="gallery/12.jpeg" alt="12">
-    <img src="gallery/13.jpeg" alt="13">
-    <img src="gallery/14.jpeg" alt="14">
-    <img src="gallery/15.jpeg" alt="15">
-    <img src="gallery/16.jpeg" alt="16">
-    <img src="gallery/17.jpeg" alt="17">
-    <img src="gallery/18.jpeg" alt="18">
-    <img src="gallery/19.jpeg" alt="19">
-    <img src="gallery/20.jpeg" alt="20">
+    <img src="gallery/1.jpeg" alt="Etkinlik 1">
+    <img src="gallery/2.jpeg" alt="Etkinlik 2">
+    <img src="gallery/3.jpeg" alt="Etkinlik 3">
+    <img src="gallery/4.jpeg" alt="Etkinlik 4">
+    <img src="gallery/5.jpeg" alt="Etkinlik 5">
+    <img src="gallery/6.jpeg" alt="Etkinlik 6">
+    <img src="gallery/7.jpeg" alt="Etkinlik 7">
+    <img src="gallery/8.jpeg" alt="Etkinlik 8">
+    <img src="gallery/9.jpeg" alt="Etkinlik 9">
+    <img src="gallery/10.jpeg" alt="Etkinlik 10">
+    <img src="gallery/11.jpeg" alt="Etkinlik 11">
+    <img src="gallery/12.jpeg" alt="Etkinlik 12">
+    <img src="gallery/13.jpeg" alt="Etkinlik 13">
+    <img src="gallery/14.jpeg" alt="Etkinlik 14">
+    <img src="gallery/15.jpeg" alt="Etkinlik 15">
+    <img src="gallery/16.jpeg" alt="Etkinlik 16">
+    <img src="gallery/17.jpeg" alt="Etkinlik 17">
+    <img src="gallery/18.jpeg" alt="Etkinlik 18">
+    <img src="gallery/19.jpeg" alt="Etkinlik 19">
+    <img src="gallery/20.jpeg" alt="Etkinlik 20">
   </div>
 </section>
 
