@@ -2,64 +2,85 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Minik Kalpler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Fredoka One', cursive;
-      background: linear-gradient(to right, #ff5f6d, #ffc371);
-      color: #fff;
+      background: linear-gradient(to bottom right, #ff4081, #ffca28);
+      color: white;
       overflow-x: hidden;
     }
 
     header {
       text-align: center;
-      padding: 30px 20px 10px;
+      padding: 20px 0;
     }
 
     header img {
-      width: 130px;
+      width: 160px;
       border-radius: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
     }
 
-    header h1 {
+    h1 {
+      margin: 10px 0;
       font-size: 2.5em;
-      margin: 10px 0 0;
-      text-shadow: 2px 2px 6px #00000066;
+      text-shadow: 2px 2px 5px #000;
     }
 
     section {
+      padding: 30px 20px;
       max-width: 1000px;
-      margin: 40px auto;
-      padding: 20px;
+      margin: 20px auto;
       background: rgba(255, 255, 255, 0.1);
-      border-radius: 15px;
-      backdrop-filter: blur(6px);
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
 
     h2 {
-      font-size: 2em;
+      color: #fff59d;
+      font-size: 1.8em;
       margin-bottom: 20px;
-      text-align: center;
-      text-shadow: 1px 1px 4px #000;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      font-size: 1.2em;
+    }
+
+    li {
+      margin: 12px 0;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 25px;
+      margin: 15px 10px;
+      background: #fff176;
+      color: #880e4f;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 15px;
     }
 
     .gallery img {
       width: 100%;
       border-radius: 10px;
-      object-fit: cover;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
     }
 
     .gallery img:hover {
@@ -68,48 +89,98 @@
 
     footer {
       text-align: center;
-      margin: 40px 0 20px;
       color: #eee;
-      font-size: 14px;
+      margin: 50px 0 20px;
+      font-size: 0.9em;
+    }
+
+    .emoji {
+      position: fixed;
+      z-index: 1;
+      animation: floatEmoji linear infinite;
+      top: 100vh;
+      pointer-events: none;
+      opacity: 1;
+    }
+
+    @keyframes floatEmoji {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-130vh) rotate(720deg);
+        opacity: 0.6;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <img src="gallery/1.jpeg" alt="Minik Kalpler Logo">
-    <h1>Minik Kalpler</h1>
-  </header>
+<header>
+  <img src="gallery/1.jpeg" alt="Minik Kalpler Logo">
+  <h1>Minik Kalpler</h1>
+</header>
 
-  <section>
-    <h2>📸 Etkinlik Galerisi</h2>
-    <div class="gallery">
-      <img src="gallery/1.jpeg" alt="Etkinlik 1">
-      <img src="gallery/2.jpeg" alt="Etkinlik 2">
-      <img src="gallery/3.jpeg" alt="Etkinlik 3">
-      <img src="gallery/4.jpeg" alt="Etkinlik 4">
-      <img src="gallery/5.jpeg" alt="Etkinlik 5">
-      <img src="gallery/6.jpeg" alt="Etkinlik 6">
-      <img src="gallery/7.jpeg" alt="Etkinlik 7">
-      <img src="gallery/8.jpeg" alt="Etkinlik 8">
-      <img src="gallery/9.jpeg" alt="Etkinlik 9">
-      <img src="gallery/10.jpeg" alt="Etkinlik 10">
-      <img src="gallery/11.jpeg" alt="Etkinlik 11">
-      <img src="gallery/12.jpeg" alt="Etkinlik 12">
-      <img src="gallery/13.jpeg" alt="Etkinlik 13">
-      <img src="gallery/14.jpeg" alt="Etkinlik 14">
-      <img src="gallery/15.jpeg" alt="Etkinlik 15">
-      <img src="gallery/16.jpeg" alt="Etkinlik 16">
-      <img src="gallery/17.jpeg" alt="Etkinlik 17">
-      <img src="gallery/18.jpeg" alt="Etkinlik 18">
-      <img src="gallery/19.jpeg" alt="Etkinlik 19">
-      <img src="gallery/20.jpeg" alt="Etkinlik 20">
-    </div>
-  </section>
+<section>
+  <h2>🎈 Hizmetlerimiz</h2>
+  <ul>
+    <li>🤡 Palyaço Kiralama</li>
+    <li>🍭 Pamuk Şeker Makinesi Kiralama</li>
+    <li>🍿 Patlamış Mısır Arabası Kiralama</li>
+    <li>🐻 Maskot Gösterileri</li>
+  </ul>
+</section>
 
-  <footer>
-    © 2025 Minik Kalpler Organizasyon
-  </footer>
+<section>
+  <h2>📞 İletişim</h2>
+  <a class="button" href="https://wa.me/905456220893" target="_blank">📲 WhatsApp</a>
+  <a class="button" href="https://www.instagram.com/palyacoo.organizasyon" target="_blank">📸 Instagram</a>
+</section>
+
+<section>
+  <h2>📸 Etkinlik Galerisi</h2>
+  <div class="gallery">
+    <!-- 20 görsel -->
+    <img src="gallery/1.jpeg" alt="Etkinlik 1">
+    <img src="gallery/2.jpeg" alt="Etkinlik 2">
+    <img src="gallery/3.jpeg" alt="Etkinlik 3">
+    <img src="gallery/4.jpeg" alt="Etkinlik 4">
+    <img src="gallery/5.jpeg" alt="Etkinlik 5">
+    <img src="gallery/6.jpeg" alt="Etkinlik 6">
+    <img src="gallery/7.jpeg" alt="Etkinlik 7">
+    <img src="gallery/8.jpeg" alt="Etkinlik 8">
+    <img src="gallery/9.jpeg" alt="Etkinlik 9">
+    <img src="gallery/10.jpeg" alt="Etkinlik 10">
+    <img src="gallery/11.jpeg" alt="Etkinlik 11">
+    <img src="gallery/12.jpeg" alt="Etkinlik 12">
+    <img src="gallery/13.jpeg" alt="Etkinlik 13">
+    <img src="gallery/14.jpeg" alt="Etkinlik 14">
+    <img src="gallery/15.jpeg" alt="Etkinlik 15">
+    <img src="gallery/16.jpeg" alt="Etkinlik 16">
+    <img src="gallery/17.jpeg" alt="Etkinlik 17">
+    <img src="gallery/18.jpeg" alt="Etkinlik 18">
+    <img src="gallery/19.jpeg" alt="Etkinlik 19">
+    <img src="gallery/20.jpeg" alt="Etkinlik 20">
+  </div>
+</section>
+
+<footer>
+  © 2025 Minik Kalpler Organizasyon
+</footer>
+
+<script>
+  const emojis = ["🐻", "🦄", "🍭", "🎈", "🎉", "🎠", "🍓", "🍬", "🎪", "🎂"];
+  for (let i = 0; i < 50; i++) {
+    const span = document.createElement("span");
+    span.className = "emoji";
+    span.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+    span.style.left = Math.random() * 100 + "vw";
+    span.style.animationDuration = (Math.random() * 12 + 8) + "s";
+    span.style.fontSize = (Math.random() * 20 + 40) + "px";
+    document.body.appendChild(span);
+  }
+</script>
 
 </body>
 </html>
